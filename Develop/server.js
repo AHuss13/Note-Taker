@@ -27,7 +27,7 @@ app.post('/api/notes', function (req, res) {
     notes.push(newNote)
     fs.writeFile("./db/db.json", JSON.stringify(notes), function(err, result){
       console.log('New note has been added')
-      res.json(notes)
+      res.sendStatus(201)
     })
   })
   // Log request to the terminal
